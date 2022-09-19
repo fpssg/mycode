@@ -15,13 +15,14 @@ spec:
       labels:
         role: app
     spec:
+      serviceAccountName: myaccount
       containers:
       - name: app
         image: image_id
         resources:
           requests:
             cpu: 10m
-        serviceAccountName: myaccount
+        
             
      
    
