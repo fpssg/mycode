@@ -1,6 +1,6 @@
 pipeline{  
     environment {
-    registry = "https://hub.docker.com/repository/docker/rahulmamdocker/psassignment"
+    registry = "rahulmamdocker/psassignment"
     }
   agent any
   stages {
@@ -22,7 +22,7 @@ pipeline{
               
               script {
                  
-                  docker.withRegistry( "https://hub.docker.com/repository/docker/rahulmamdocker/psassignment", registryCredential ) {
+                  docker.withRegistry( '', registryCredential ) {
                       def appimage = docker.build registry + ":$BUILD_NUMBER"
                       appimage.push()
                       
@@ -36,13 +36,10 @@ pipeline{
                    def image_id = registry + ":$BUILD_NUMBER"
                    sh "sed -i 's|image_id|$image_id|g' deployment.yml"
                    sh "kubectl apply -f deployment.yml -f service.yml"
-                   sh "kubectl rollout status deployment hello-deployment"
-                   sh "kubectl get service hello-svc"
+                   sh "kubectl rollout status deployment springboot"
+                   sh "kubectl get service springboot-svc"
                 }
            }
        }
    }
 }
-
-
-
