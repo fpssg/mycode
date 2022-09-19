@@ -36,6 +36,7 @@ pipeline{
                    def image_id = registry + ":$BUILD_NUMBER"
                    sh "sed -i 's|image_id|$image_id|g' deployment.yml"
                    sh "sudo su -"
+                   sh "su ubuntu"
                    sh "kubectl apply -f deployment.yml -f service.yml"
                    sh "kubectl rollout status deployment springboot"
                    sh "kubectl get service springboot-svc"
