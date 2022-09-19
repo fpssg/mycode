@@ -23,7 +23,7 @@ pipeline{
               script {
                  
                  docker.withRegistry('', registryCredential) {
-                 def appimage = docker.build registry + ":$BUILD_NUBER"
+                 def appimage = docker.build registry + ":$BUILD_NUMBER"
                  appimage.push()
                       
                   }
