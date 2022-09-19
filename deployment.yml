@@ -20,5 +20,6 @@ spec:
         resources:
           requests:
             cpu: 10m
-         
-        serviceAccountName: myaccount
+            
+     
+       serviceAccountName: myaccount
