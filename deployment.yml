@@ -15,7 +15,7 @@ spec:
       labels:
         role: app
     spec:
-      serviceAccountName: myaccount
+      serviceAccountName: jenkins
       containers:
       - name: app
         image: image_id
