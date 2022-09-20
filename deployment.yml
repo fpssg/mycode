@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-deployment
-  namespace: jenkins
   labels:
     role: app
 spec:
@@ -15,7 +14,7 @@ spec:
       labels:
         role: app
     spec:
-      serviceAccountName: jenkins
+      
       containers:
       - name: app
         image: image_id
