@@ -1,6 +1,6 @@
 pipeline{  
     environment {
-    registry = "rahulmamdocker/psassignment"
+    registry = "soundaryadocker/psassignment"
     }
   agent any
   stages {
