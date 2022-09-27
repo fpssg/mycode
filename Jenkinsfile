@@ -1,6 +1,6 @@
 pipeline{  
     environment {
-    registry = "soundaryadocker/psassignment"
+    registry = "soundaryadocker/capstone"
     }
   agent any
   stages {
